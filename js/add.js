@@ -13,24 +13,38 @@ const createElem=tag=>{
     const render=_=>{
         const li =createElem("li")
         li.classList.add("todo__item")
-    const p=createElem("p")
-    p.classList.add("todo__para")
-    p.textContent=inputEl.value
-    const i=createElem("i")
+        const p=createElem("p")
+        p.classList.add("todo__para")
+        p.textContent=inputEl.value
+        const i=createElem("i")
     i.classList.add("fa-sharp","fa-solid","fa-circle-xmark","todo__icon")
     li.appendChild(p)
     li.appendChild(i)
-    todoItemsEl.appendChild(li)
+    todoItemsEl.insertBefore(li,todoItemsEl.firstElementChild)
     inputEl.value=""
     // return li
-    }
+}
 
-    const listeners=_=>{
-        addEl.addEventListener("click",()=>{
+const listeners=_=>{
+    addEl.addEventListener("click",()=>{
 if(inputEl.value.length>0){
 render()
+
+
 }
-        })
+})
+inputEl.addEventListener("keypress",(e)=>{
+    if(e.key==="Enter"){
+        if(inputEl.value.length>0){
+        render()
+        
+        
+        }
+        
+    }
+
+})
+
     }
 
 

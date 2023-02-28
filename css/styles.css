@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --container-width:790px;
+    --main-color:indigo;
+    --main-color-shaded:rgb(191, 142, 226);
+    --white-color:rgb(241, 241, 241);
+    --heading-font-size:2rem;
+    --main-font-stack:'Poppins', sans-serif;
+
+}
+
+body{
+    font-family: var(--main-font-stack);
+}
+.container{
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+
+.todo{
+    max-width: 500px;
+    width: 80%;
+    background-color: var(--white-color);
+    margin: 1rem auto;
+    padding: 2rem;
+}
+.todo__heading{
+    text-align: center;
+    font-size: var(--heading-font-size);
+    color: var(--main-color);
+    font-family: var(--main-font-stack);
+    font-weight: 500;
+    margin: 2rem 0;
+}
+.todo__container{
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem;
+}
+.todo__input{
+    padding: 1rem 2rem;
+    width: 80%;
+    outline: none;
+    border: none;
+}
+
+.todo__add{
+    padding: 1rem 1rem;
+    width: 20%;
+    text-align: center;
+}
+.todo__items{
+    padding: 2rem auto;
+}
+.todo__item{
+    margin: 3rem 2rem;
+    list-style: none;
+    border-bottom: 3px solid var(--main-color);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+}
+/* .todo__item:hover{
+    background-color: white;
+    transition: all .3s;
+} */
+.todo__para{
+    color: black;
+    text-decoration: none;
+}
+
+.todo__icon{
+        font-size: 1.7rem;
+        color: rgb(168, 12, 12);
+        /* padding: 1.3rem; */
+        /* text-decoration: overline; */
+    }
+        
+        .todo__item.todo__item--done{
+            border-bottom:3px solid var(--main-color-shaded);
+            /* text-decoration: line-through; */
+        }
+        
+        .todo__para.todo__para--done{
+            color: rgb(151, 151, 151);
+            text-decoration: line-through;
+        }
